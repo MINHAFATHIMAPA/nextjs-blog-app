@@ -47,3 +47,5 @@ Run the development server:
 ```bash
 npm install
 npm run dev
+## 🌐 Live Demo
+https://nextjs-blog-app-cyan-three.vercel.app/
