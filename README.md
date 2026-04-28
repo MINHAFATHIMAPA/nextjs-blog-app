@@ -25,11 +25,19 @@ A modern full-stack blog application built using Next.js with dynamic routing, i
 
 ---
 
+
 ## 📸 Screenshots
 
-![Home](screenshots/home.png)
-![Blog](screenshots/blog.png)
-![FAQ](screenshots/faq.png)
+### 🏠 Home
+![Home](./public/screenshots/home.png)
+
+### 📰 Blog
+![Blog](./public/screenshots/blog.png)
+
+### ❓ FAQ
+![FAQ](./public/screenshots/faq.png)
+![Blog](public/screenshots/blog.png)
+![FAQ](public/screenshots/faq.png)
 ---     
 
 
