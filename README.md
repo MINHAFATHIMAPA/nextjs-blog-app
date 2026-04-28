@@ -34,7 +34,7 @@ A modern full-stack blog application built using Next.js with dynamic routing, i
 ![FAQ](public/screenshots/faq.png)
 ---     
 
-14b9bda0fe1b031cf2cdcfed79f3fdcb839a84b1
+
 ## 🚀 Getting Started
 
 Run the development server:
