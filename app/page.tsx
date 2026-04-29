@@ -8,7 +8,7 @@ export default function Home() {
 
       {/* 🔥 HERO IMAGE */}
       <motion.img
-        src="https://tse2.mm.bing.net/th/id/OIP.5St3RHrdfTdJdNjIC-NywQAAAA?rs=1&pid=ImgDetMain&o=7&rm=3"
+        src="/me.jpeg"
         className="w-32 h-32 rounded-full object-cover shadow-lg mb-6"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
@@ -21,7 +21,7 @@ export default function Home() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        Hey! I’m John 👋
+        Hey! I’m Minha 👋
       </motion.h1>
 
       {/* 🔥 SUBTITLE */}
@@ -30,7 +30,7 @@ export default function Home() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
-        A passionate learner exploring <b>React</b> ⚛️ and <b>Next.js</b> ⚡.  
+        A passionate learner exploring <b>React</b> ⚛️  <b>Next.js</b> ⚡and <b>SQL</b> 🗃️. I’m currently diving deep into the world of web development and sharing my journey through insightful articles .
         I love building modern web apps and sharing what I learn through articles.
       </motion.p>
 
