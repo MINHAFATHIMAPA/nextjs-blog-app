@@ -1,7 +1,7 @@
 import clientPromise from "@/lib/mongodb";
 import { ObjectId } from "mongodb";
 
-// ✅ GET (Read)
+// ✅ GET (Read all posts)
 export async function GET() {
   const client = await clientPromise;
   const db = client.db("dbblohg");
@@ -11,12 +11,12 @@ export async function GET() {
   return Response.json(
     posts.map((p) => ({
       ...p,
-      id: p._id.toString(),
+      id: p._id.toString(), // convert Mongo _id to string
     }))
   );
 }
 
-// ✅ POST (Create)
+// ✅ POST (Create new post)
 export async function POST(req) {
   try {
     const secret = req.headers.get("x-admin-key");
@@ -35,7 +35,10 @@ export async function POST(req) {
 
     const result = await db.collection("posts").insertOne(body);
 
-    return Response.json({ success: true, id: result.insertedId });
+    return Response.json({
+      success: true,
+      id: result.insertedId.toString(),
+    });
 
   } catch (error) {
     console.error("POST ERROR:", error);
@@ -43,7 +46,7 @@ export async function POST(req) {
   }
 }
 
-// ✅ DELETE (Delete blog)
+// ✅ DELETE (Delete post)
 export async function DELETE(req) {
   try {
     const secret = req.headers.get("x-admin-key");
@@ -72,7 +75,7 @@ export async function DELETE(req) {
   }
 }
 
-// ✅ PUT (Edit blog)
+// ✅ PUT (Update post)
 export async function PUT(req) {
   try {
     const secret = req.headers.get("x-admin-key");
@@ -84,14 +87,15 @@ export async function PUT(req) {
       );
     }
 
-    const { id, updatedPost } = await req.json();
+    const body = await req.json();
+    const { id, ...updateData } = body;
 
     const client = await clientPromise;
     const db = client.db("dbblohg");
 
     await db.collection("posts").updateOne(
       { _id: new ObjectId(id) },
-      { $set: updatedPost }
+      { $set: updateData }
     );
 
     return Response.json({ success: true });
